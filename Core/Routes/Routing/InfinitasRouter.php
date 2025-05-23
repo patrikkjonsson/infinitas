@@ -44,14 +44,9 @@ class InfinitasRouter extends Router {
  * @return void
  */
 	public static function connect($route, $defaults = array(), $options = array()) {
-		if (empty($options['routeClass'])) {
-			$options['routeClass'] = 'InfinitasRoute';
-		} else {
-			if ($options['routeClass'] != 'PluginShortRoute') {
-				var_dump($options);
-				exit;
-			}
-		}
+               if (empty($options['routeClass'])) {
+                       $options['routeClass'] = 'InfinitasRoute';
+               }
 
 		parent::connect($route, $defaults, $options);
 	}

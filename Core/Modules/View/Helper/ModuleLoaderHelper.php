@@ -179,28 +179,28 @@ class ModuleLoaderHelper extends InfinitasHelper {
 			return false;
 		}
 
-		$p = array_merge(array(
-			'diable_cache' => false,
-			'cache' => true
-		), $params);
-		if ($p['disable_cache'] == true || $p['cache'] == false) {
-			var_dump('no cache');
-			return false;
-		}
-		$cache = array(
-			'cache_key' => $params['_module_id'],
-			'cache_config' => $plugin
-		);
+               $p = array_merge(array(
+                       'disable_cache' => false,
+                       'cache' => true
+               ), $params);
+               if ($p['disable_cache'] == true || $p['cache'] == false) {
+                       return false;
+               }
+               $cache = array(
+                       'config' => !empty($params['cache_config']) ? $params['cache_config'] : $plugin,
+                       'key' => !empty($params['cache_key']) ? $params['cache_key'] : null
+               );
 
-		if (is_array($params['cache'])) {
-			$cache = array_merge($cache, $params['cache']);
-		}
+               if (is_array($params['cache'])) {
+                       $cache = array_merge($cache, $params['cache']);
+               }
 
-		return array(
-			'key' => $cache['cache_key'],
-			'config' => $cache['config']
-		);
-	}
+               if (empty($cache['key'])) {
+                       return false;
+               }
+
+               return $cache;
+       }
 
 /**
  * Load the config for a module if available
@@ -320,7 +320,7 @@ class ModuleLoaderHelper extends InfinitasHelper {
 			}
 		}
 
-		$title = ($module['Module']['show_heading']) ?  : false;
+               $title = !empty($module['Module']['show_heading']) ? $module['Module']['name'] : false;
 		$content = (!empty($module['Module']['content'])) ? $module['Module']['content'] : false;
 
 		return array(

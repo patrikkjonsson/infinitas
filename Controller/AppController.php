@@ -411,8 +411,8 @@
 			return 'Infinitas.last_page.' . $this->request->here;
 		}
 
-		/**
-		 * @brief save a maker for a later redirect
+               /**
+                * @brief save a marker for a later redirect
 		 *
 		 * @access public
 		 *

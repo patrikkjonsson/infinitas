@@ -1,5 +1,5 @@
 <?php
-echo $this->Form->input('ModuleConfig.diable_cache', array(
+echo $this->Form->input('ModuleConfig.disable_cache', array(
 	'type' => 'checkbox',
 	'label' => __d('modules', 'Dont cache this module'),
 	'default' => 0

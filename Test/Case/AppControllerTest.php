@@ -23,7 +23,15 @@ class AppControllerTest extends CakeTestCase {
 		parent::tearDown();
 	}
 
-	public function testSomething() {
+/**
+ * @brief test last page session key generation
+ */
+       public function testLastPageRedirectVar() {
+               $request = new CakeRequest('/some/url');
+               $request->here = '/some/url';
+               $Controller = new AppController($request, new CakeResponse());
 
-	}
+               $expected = 'Infinitas.last_page./some/url';
+               $this->assertEquals($expected, $Controller->lastPageRedirectVar());
+       }
 }

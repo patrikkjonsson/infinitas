@@ -41,7 +41,7 @@ class PluginDownload {
  * @param type $plugin
  */
 	public static function download($plugin) {
-		self::_fileDownloadn($plugin);
+                self::_fileDownload($plugin);
 	}
 
 	protected static function _fileDownload($plugin) {

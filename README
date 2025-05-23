@@ -16,7 +16,7 @@ has not been finalised just yet.
 ================================================================================
 1) download the app from http://github.com/infinitas/infinitas
 2) extract the files to the app dir, not ../app/infinits/<files> but ../app/<files>
-3) If you would like the extra plugins (recomended)
+3) If you would like the extra plugins (recommended)
 	3a) you will need to download them all manually and put them in the plugins folder. maybe its time to start using git
 4) see instructions (C) below
 
@@ -27,7 +27,7 @@ has not been finalised just yet.
 1) git clone git://github.com/infinitas/infinitas.git infinitas/
 2) cd infinitas/
 
-3) If you would like the extra plugins (recomended)
+3) If you would like the extra plugins (recommended)
 	git submodule update --init --recursive
 4) see instructions (C) below
 
